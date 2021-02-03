@@ -75,8 +75,9 @@ namespace SleepData
                         Console.WriteLine($"Week ending in {date:MMM} {date:%d}, {date:yyyy}");
                         // Console.WriteLine($"Monday: {hoursSleep[0]}");
                         string[] days = {"Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"};
-                        Console.WriteLine($"{days[0], -2} {days[1], -2} {days[2], -2} {days[3], -2} {days[4], -2} {days[5], -2} {days[6], -2}");
+                        Console.WriteLine($"{days[0], 2} {days[1], 2} {days[2], 2} {days[3], 2} {days[4], 2} {days[5], 2} {days[6], 2}");
                         Console.WriteLine("-- -- -- -- -- -- --");
+                        Console.WriteLine($"{hoursSleep[0], 2} {hoursSleep[1], 2} {hoursSleep[2], 2} {hoursSleep[3], 2} {hoursSleep[4], 2} {hoursSleep[5], 2} {hoursSleep[6], 2}");
                     }
                 }
 
