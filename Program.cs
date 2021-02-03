@@ -73,7 +73,10 @@ namespace SleepData
                         //make the second string an array of ints so we can do math
                         int[] hoursSleep = Array.ConvertAll(arr[1].Split("|"), int.Parse);
                         Console.WriteLine($"Week ending in {date:MMM} {date:%d}, {date:yyyy}");
-                        Console.WriteLine($"Monday: {hoursSleep[0]}");
+                        // Console.WriteLine($"Monday: {hoursSleep[0]}");
+                        string[] days = {"Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"};
+                        Console.WriteLine($"{days[0], -2} {days[1], -2} {days[2], -2} {days[3], -2} {days[4], -2} {days[5], -2} {days[6], -2}");
+                        Console.WriteLine("-- -- -- -- -- -- --");
                     }
                 }
 
