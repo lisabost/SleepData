@@ -72,12 +72,18 @@ namespace SleepData
                         //the next part of the string is a bunch of numbers separated by the |
                         //make the second string an array of ints so we can do math
                         int[] hoursSleep = Array.ConvertAll(arr[1].Split("|"), int.Parse);
+                        //do some math to calculate total hours of sleep
+                        int total = 0;
+                        foreach (var item in hoursSleep)
+                        {
+                            total += item;
+                        }
+                        //write everything to the console
                         Console.WriteLine($"Week ending in {date:MMM} {date:%d}, {date:yyyy}");
-                        // Console.WriteLine($"Monday: {hoursSleep[0]}");
-                        string[] days = {"Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"};
-                        Console.WriteLine($"{days[0], 3} {days[1], 3} {days[2], 3} {days[3], 3} {days[4], 3} {days[5], 3} {days[6], 3}");
-                        Console.WriteLine(" --  --  --  --  --  --  --");
-                        Console.WriteLine($"{hoursSleep[0], 3} {hoursSleep[1], 3} {hoursSleep[2], 3} {hoursSleep[3], 3} {hoursSleep[4], 3} {hoursSleep[5], 3} {hoursSleep[6], 3}");
+                        string[] days = {"Mo", "Tu", "We", "Th", "Fr", "Sa", "Su", "Tot", "Avg"};
+                        Console.WriteLine($"{days[0], 3} {days[1], 3} {days[2], 3} {days[3], 3} {days[4], 3} {days[5], 3} {days[6], 3} {days[7], 4} {days[8], 4}");
+                        Console.WriteLine(" --  --  --  --  --  --  --  ---  ---");
+                        Console.WriteLine($"{hoursSleep[0], 3} {hoursSleep[1], 3} {hoursSleep[2], 3} {hoursSleep[3], 3} {hoursSleep[4], 3} {hoursSleep[5], 3} {hoursSleep[6], 3} {total, 4}");
                         Console.WriteLine("");
                     }
                 }
