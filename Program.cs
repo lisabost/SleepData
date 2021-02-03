@@ -57,11 +57,11 @@ namespace SleepData
             else if (resp == "2")
             {
                 // TODO: parse data file
-                if(File.Exists(file))
+                if (File.Exists(file))
                 {
                     StreamReader sr = new StreamReader(file);
                     //read data from file
-                    while(!sr.EndOfStream)
+                    while (!sr.EndOfStream)
                     {
                         string line = sr.ReadLine();
                         //convert the string to an array
@@ -78,12 +78,14 @@ namespace SleepData
                         {
                             total += item;
                         }
+                        //do some more math to calculate the average hours of sleep
+                        double average = (double)total / 7;
                         //write everything to the console
                         Console.WriteLine($"Week ending in {date:MMM} {date:%d}, {date:yyyy}");
-                        string[] days = {"Mo", "Tu", "We", "Th", "Fr", "Sa", "Su", "Tot", "Avg"};
-                        Console.WriteLine($"{days[0], 3} {days[1], 3} {days[2], 3} {days[3], 3} {days[4], 3} {days[5], 3} {days[6], 3} {days[7], 4} {days[8], 4}");
+                        string[] days = { "Mo", "Tu", "We", "Th", "Fr", "Sa", "Su", "Tot", "Avg" };
+                        Console.WriteLine($"{days[0],3} {days[1],3} {days[2],3} {days[3],3} {days[4],3} {days[5],3} {days[6],3} {days[7],4} {days[8],4}");
                         Console.WriteLine(" --  --  --  --  --  --  --  ---  ---");
-                        Console.WriteLine($"{hoursSleep[0], 3} {hoursSleep[1], 3} {hoursSleep[2], 3} {hoursSleep[3], 3} {hoursSleep[4], 3} {hoursSleep[5], 3} {hoursSleep[6], 3} {total, 4}");
+                        Console.WriteLine($"{hoursSleep[0],3} {hoursSleep[1],3} {hoursSleep[2],3} {hoursSleep[3],3} {hoursSleep[4],3} {hoursSleep[5],3} {hoursSleep[6],3} {total,4} {average, 4:n1}");
                         Console.WriteLine("");
                     }
                 }
